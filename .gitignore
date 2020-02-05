@@ -1,0 +1,29 @@
+# Build results
+
+[Bb]in/
+[Oo]bj/
+[Aa]ssemblies/
+
+# User-specific files
+
+*.suo
+*.user
+*.csproj.DotSettings
+
+# ReSharper is a .NET coding add-in
+
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# NuGet Packages Directory
+
+packages/
+!packages/repositories.config
+/Source/GostCryptography.Console/Minpromtorg_ESIA.pfx
+/Source/GostCryptography.Console/123RU15055000021.xml
+/.vs/GostCryptography/v15/Server/sqlite3/db.lock
+/.vs/GostCryptography/v15/Server/sqlite3/storage.ide
+/.vs/GostCryptography/v15/Server/sqlite3/storage.ide-shm
+/.vs/GostCryptography/v15/Server/sqlite3/storage.ide-wal
+/.vs/slnx.sqlite
+/.vs
