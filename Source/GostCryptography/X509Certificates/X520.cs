@@ -339,6 +339,9 @@ namespace GostCryptography.X509Certificates
             {
             }
         }
+        /// <summary>
+        /// ИНН физического лица
+        /// </summary>
         public class INN : AttributeTypeAndValue
 		{
 			public INN()
@@ -346,7 +349,17 @@ namespace GostCryptography.X509Certificates
 			{
 			}
 		}
-		public class SNILS : AttributeTypeAndValue
+        /// <summary>
+        /// ИНН юридического лица
+        /// </summary>
+        public class INNLE : AttributeTypeAndValue
+        {
+            public INNLE()
+                : base("1.2.643.100.4", 10)
+            {
+            }
+        }
+        public class SNILS : AttributeTypeAndValue
 		{
 			public SNILS()
 				: base("1.2.643.100.3", 11)

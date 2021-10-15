@@ -70,7 +70,8 @@ namespace GostCryptography.X509Certificates
 		static byte[] initial = { 0x55, 0x04, 0x2B };
 		static byte[] unstructuredName = { 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x09, 0x02 };
 		static byte[] inn = { 0x2a, 0x85, 0x03, 0x03, 0x81, 0x03, 0x01, 0x01 };
-		static byte[] ogrn = { 0x2a, 0x85, 0x03, 0x64, 0x01 };
+        static byte[] innle = { 0x2a, 0x85, 0x03, 0x64, 0x04 };
+        static byte[] ogrn = { 0x2a, 0x85, 0x03, 0x64, 0x01 };
         static byte[] ogrnip = { 0x2a, 0x85, 0x03, 0x64, 0x05 };
         static byte[] snils = { 0x2a, 0x85, 0x03, 0x64, 0x03 };
 
@@ -172,7 +173,9 @@ namespace GostCryptography.X509Certificates
 					sb.Append("UN=");
 				else if (poid.CompareValue(inn))
 					sb.Append("ИНН=");
-				else if (poid.CompareValue(ogrn))
+                else if (poid.CompareValue(innle))
+                    sb.Append("ИННЮЛ=");
+                else if (poid.CompareValue(ogrn))
 					sb.Append("ОГРН=");
                 else if (poid.CompareValue(ogrnip))
                     sb.Append("ОГРНИП=");
@@ -181,7 +184,7 @@ namespace GostCryptography.X509Certificates
 				else
 				{
 					// unknown OID
-					sb.Append("OID.");  // NOTE: Not present as RFC2253
+					//sb.Append("OID.");  // NOTE: Not present as RFC2253
 					sb.Append(ASN1Convert.ToOid(poid));
 					sb.Append("=");
 				}
@@ -273,7 +276,9 @@ namespace GostCryptography.X509Certificates
                     return new X520.OGRNIP();
                 case "ИНН":
 					return new X520.INN();
-				case "СНИЛС":
+                case "ИННЮЛ":
+                    return new X520.INNLE();
+                case "СНИЛС":
 					return new X520.SNILS();
 				default:
 					if (s.StartsWith("OID."))
