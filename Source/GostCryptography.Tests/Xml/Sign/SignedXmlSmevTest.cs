@@ -43,7 +43,7 @@ namespace GostCryptography.Tests.Xml.Sign
 			return document;
 		}
 
-		private static XmlDocument SignSmevRequest(XmlDocument smevRequest, Gost3410AsymmetricAlgorithm signingCertificate)
+		private static XmlDocument SignSmevRequest(XmlDocument smevRequest, Gost3410 signingCertificate)
 		{
 			// Создание подписчика XML-документа
 			var signedXml = new SmevSignedXml(smevRequest); // { GetIdElementHandler = GetSmevIdElement };

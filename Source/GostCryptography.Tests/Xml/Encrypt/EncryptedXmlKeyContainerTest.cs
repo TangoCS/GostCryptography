@@ -26,8 +26,8 @@ namespace GostCryptography.Tests.Xml.Encrypt
 	[TestFixture(Description = "Шифрация и дешифрация XML с использованием контейнера ключей")]
 	public sealed class EncryptedXmlKeyContainerTest
 	{
-		private Gost3410AsymmetricAlgorithm _privateKey;
-		private Gost3410AsymmetricAlgorithm _publicKey;
+		private Gost3410 _privateKey;
+		private Gost3410 _publicKey;
 
 		[SetUp]
 		public void SetUp()

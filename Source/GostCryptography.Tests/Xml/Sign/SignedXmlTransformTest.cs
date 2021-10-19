@@ -38,7 +38,7 @@ namespace GostCryptography.Tests.Xml.Sign
 			return document;
 		}
 
-		private static XmlDocument SignXmlDocument(XmlDocument xmlDocument, Gost3410AsymmetricAlgorithm signingCertificate)
+		private static XmlDocument SignXmlDocument(XmlDocument xmlDocument, Gost3410 signingCertificate)
 		{
 			// Создание подписчика XML-документа
 			var signedXml = new SignedXml(xmlDocument);
